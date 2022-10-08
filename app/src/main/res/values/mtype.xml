@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mtype_adapter">
+        <item>Cow</item>
+        <item>Buffalo</item>
+        <item>Both</item>
+    </string-array>
+</resources>

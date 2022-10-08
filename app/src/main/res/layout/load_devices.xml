@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:background="@color/ColourAccent">
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:layout_above="@id/layoutwscale"
+    android:paddingTop="100dp"
+    android:orientation="vertical"
+    android:id="@+id/layoutprinter">
+    <ImageView
+        android:layout_width="110dp"
+        android:layout_height="100dp"
+        android:src="@drawable/printer"
+        android:id="@+id/printer"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textprinter"
+        android:textSize="35dp"
+        android:text="Printer"
+        android:textColor="@color/white"/>
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_above="@id/layoutwscale"
+        android:paddingTop="100dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:id="@+id/layoutanalyzer">
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:src="@drawable/milkanalyser"
+        android:id="@+id/analyzer"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textanalyzer"
+            android:textSize="35dp"
+            android:text="Analyzer"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/layoutnext"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:id="@+id/layoutwscale">
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/wscale"
+        android:id="@+id/wscale"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textwscale"
+            android:textSize="35dp"
+            android:text="Weighing Scale"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/layoutnext">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/next"
+            android:text="Next"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+</RelativeLayout>

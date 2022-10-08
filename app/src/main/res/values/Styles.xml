@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <item name="android:textSize">@dimen/sp12</item>
+        <item name="android:textColor">@color/textColorBlack54</item>
+        <item name="android:gravity">left|center_horizontal|clip_horizontal</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:paddingLeft">@dimen/dp8</item>
+        <item name="android:paddingTop">@dimen/dp4</item>
+        <item name="android:paddingRight">@dimen/dp8</item>
+        <item name="android:paddingBottom">@dimen/dp4</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">roboto_regular</item>
+    </style>
+</resources>

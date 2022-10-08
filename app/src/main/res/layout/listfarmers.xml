@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/acc"
+        android:padding="5dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="0"
+            android:id="@+id/txtfcode"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/colourPrimary"
+            android:textSize="25dp"
+            android:background="@drawable/circle"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+
+        <TextView
+            android:text="First Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtfname"
+            android:textSize="17sp"
+            android:maxLength="30"
+            android:textStyle="bold"
+            android:textColor="@color/colourPrimary"
+            android:gravity="start"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_toRightOf="@id/txtfcode"
+            android:layout_toLeftOf="@id/textmytpe"
+            />
+
+        <TextView
+            android:text="Mobile No"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtmno"
+            android:textSize="15sp"
+            android:maxLength="30"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/colourPrimary"
+            android:gravity="left"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@id/txtfname"
+            android:layout_toLeftOf="@id/textactive"
+            android:layout_toRightOf="@id/txtfcode"
+             />
+        <TextView
+            android:text="Mtype"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtmytpe"
+            android:textSize="15sp"
+            android:maxLength="30"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/colourPrimary"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_alignParentRight="true"
+            />
+        <TextView
+            android:text="Milk Type :"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textmytpe"
+            android:textSize="15sp"
+            android:maxLength="30"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/colourPrimary"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_toLeftOf="@id/txtmytpe"
+            />
+        <TextView
+            android:text="Active"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textactive"
+            android:textSize="15sp"
+            android:maxLength="30"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/colourPrimary"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@id/textmytpe"
+            android:layout_toLeftOf="@id/active"
+            />
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/active"
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@id/txtmytpe"
+            android:layout_alignParentRight="true"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

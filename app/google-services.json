@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "997767830956",
+    "firebase_url": "https://milkcollection-733d1-default-rtdb.firebaseio.com",
+    "project_id": "milkcollection-733d1",
+    "storage_bucket": "milkcollection-733d1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:997767830956:android:27f2c02b0ddecb15adee09",
+        "android_client_info": {
+          "package_name": "com.example.fad"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "997767830956-ntjosa07iikgctiamj7erin2e5iave4k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOxE3EF0TdxwwHKlMHXk6Mv_e0NkbTPlo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "997767830956-ntjosa07iikgctiamj7erin2e5iave4k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:997767830956:android:67d3eaf067110b60adee09",
+        "android_client_info": {
+          "package_name": "com.example.milkcollectionapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "997767830956-ntjosa07iikgctiamj7erin2e5iave4k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOxE3EF0TdxwwHKlMHXk6Mv_e0NkbTPlo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "997767830956-ntjosa07iikgctiamj7erin2e5iave4k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

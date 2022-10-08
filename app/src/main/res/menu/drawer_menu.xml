@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_Home"
+            android:icon="@drawable/home4"
+            android:title="Home"/>
+        <item android:id="@+id/nav_Collection"
+            android:icon="@drawable/ic_collection"
+            android:title="Milk Collection"/>
+        <item android:id="@+id/nav_Farmers"
+            android:icon="@drawable/ic_customer_info"
+            android:title="Farmers"/>
+        <item android:id="@+id/nav_Rates"
+            android:icon="@drawable/ic_ratechart"
+            android:title="Rate Chart"/>
+        <item android:id="@+id/nav_Advance"
+            android:icon="@drawable/ic_loan"
+            android:title="Advances"/>
+        <item android:id="@+id/nav_Reports"
+            android:icon="@drawable/ic_report"
+            android:title="Reports"/>
+        <item android:id="@+id/nav_Setttings"
+            android:icon="@drawable/ic_settings"
+            android:title="Settings"/>
+    </group>
+</menu>
