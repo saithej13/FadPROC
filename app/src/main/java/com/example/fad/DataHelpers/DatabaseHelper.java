@@ -1,14 +1,5 @@
 package com.example.fad.DataHelpers;
 
-import static com.example.fad.farmers.farmers.searchtext;
-import static com.example.fad.milkcollection.milkcollection.ddate;
-import static com.example.fad.milkcollection.milkcollection.dshift;
-import static com.example.fad.reports.report.dfdate;
-import static com.example.fad.reports.report.dfmtype;
-import static com.example.fad.reports.report.dfshift;
-import static com.example.fad.reports.report.drfcode;
-import static com.example.fad.reports.report.dtdate;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -26,6 +17,15 @@ import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+
+import static com.example.fad.farmers.farmers.searchtext;
+import static com.example.fad.milkcollection.milkcollection.ddate;
+import static com.example.fad.milkcollection.milkcollection.dshift;
+import static com.example.fad.reports.report.dfdate;
+import static com.example.fad.reports.report.dfmtype;
+import static com.example.fad.reports.report.dfshift;
+import static com.example.fad.reports.report.drfcode;
+import static com.example.fad.reports.report.dtdate;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String TAG ="DatabaseHelper";
@@ -51,9 +51,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String fmtype = "mtype";
     private static final String factive ="active";
 
+    //first the thing is we should assign rate chart to farmers
+    //so we need to define the rate chart id in farmer table
+    //and we should declare a ratechart id in ratechart table without distrubing branch data
+
     private static final String RATE_TABLE_NAME="milkrates";
     private static final String rslno = "slno";
     private static final String rbcode ="bcode";
+    private static final String rrcid ="rcid";
     private static final String rmtype="mtype";
     private static final Date rfdate = null;
     private static final Date rtdate = null;
@@ -85,7 +90,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
     private static final String createTable = "CREATE TABLE milkdata("+"slno INTEGER PRIMARY KEY AUTOINCREMENT, " + "date DATE, "+ "shift BOOLEAN, "+ "code INTEGER, "+ "name TEXT, "+ "quantity Numeric(18,2), "+ "mtype TEXT, " + "fat Numeric(18,2), "+ "snf Numeric(18,2), "+ "rate Numeric(18,2), "+ "amount Numeric(18,2),"+" foreign key (code) references farmerdata (code) on update restrict on delete restrict)";
     private static final String createFarmerTable = "CREATE TABLE farmerdata("+"slno INTEGER PRIMARY KEY AUTOINCREMENT,code INTEGER UNIQUE, "+ "fname TEXT, "+ "mobileno TEXT, "+ "mtype TEXT, " + "active BOOLEAN) ";
-    private static final String createRATETable="CREATE TABLE "+RATE_TABLE_NAME+"("+"slno INTEGER PRIMARY KEY AUTOINCREMENT, " + "bcode INTEGER, "+ "mtype TEXT, "+ "fdate DATE, "+ "tdate DATE, "+ "fatmin Numeric(18,2), "+ "fatmax Numeric(18,2), " + "snfmin Numeric(18,2), "+ "snfmax Numeric(18,2), "+ "tsrate Numeric(18,2))";
+    private static final String createRATETable="CREATE TABLE "+RATE_TABLE_NAME+"("+"slno INTEGER PRIMARY KEY AUTOINCREMENT, " + "bcode INTEGER,"+ "rrcid TEXT, "+ "mtype TEXT, "+ "fdate DATE, "+ "tdate DATE, "+ "fatmin Numeric(18,2), "+ "fatmax Numeric(18,2), " + "snfmin Numeric(18,2), "+ "snfmax Numeric(18,2), "+ "tsrate Numeric(18,2))";
     private static final String createdRATETable="CREATE TABLE dynamicrates("+"slno INTEGER PRIMARY KEY AUTOINCREMENT, " + "bcode INTEGER, "+ "mtype TEXT, "+ "fdate DATE, "+ "tdate DATE, "+ "fat Numeric(18,2), "+ "snf Numeric(18,2), "+ "rate Numeric(18,2))";
     private static final String createSettingsTable="CREATE TABLE "+SETTINGS_TABLE_NAME+"("+"slno INTEGER PRIMARY KEY AUTOINCREMENT, " + "bcode INTEGER, "+ "name TEXT, "+ "value TEXT, "+ "active BOOLEAN)";
     private static final String createBranchTable="CREATE TABLE "+BRANCH_TABLE_NAME+"("+"slno INTEGER PRIMARY KEY AUTOINCREMENT, " + "bcode INTEGER, "+ "bname TEXT, "+ "fdate DATE, "+ "tdate DATE, "+ "active BOOLEAN, "+ "productkey TEXT, "+ "deviceid TEXT)";
@@ -250,13 +255,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         long result = db.delete(RATE_TABLE_NAME,"slno = " + slno,null);
         return result != -1;
     }
-    public boolean adddratesData(String bcode, String mtype, Date fdate, Date tdate, String fat, String snf, String rate){
+    public boolean adddratesData(String bcode,String rcid, String mtype, Date fdate, Date tdate, String fat, String snf, String rate){
         long result=0;
         SQLiteDatabase db = this.getWritableDatabase();
         if(db.isOpen()) {
             ContentValues contentValues = new ContentValues();
             contentValues.put(rbcode, bcode);
             contentValues.put(rmtype, mtype);
+            contentValues.put(rrcid, rcid);
             //DateFormat.getDateInstance().format(myDate);
             contentValues.put("fdate", String.valueOf(fdate));
             contentValues.put("tdate", String.valueOf(tdate));
@@ -269,12 +275,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return result != -1;
     }
-    public boolean addratesData(String bcode, String mtype, Date fdate, Date tdate, String fatmin, String fatmax, String snfmin, String snfmax, String tsrate){
+    public boolean addratesData(String bcode,String rcid, String mtype, Date fdate, Date tdate, String fatmin, String fatmax, String snfmin, String snfmax, String tsrate){
         long result=0;
         SQLiteDatabase db = this.getWritableDatabase();
         if(db.isOpen()) {
             ContentValues contentValues = new ContentValues();
             contentValues.put(rbcode, bcode);
+            contentValues.put(rrcid, rcid);
             contentValues.put(rmtype, mtype);
             //DateFormat.getDateInstance().format(myDate);
             contentValues.put("fdate", String.valueOf(fdate));
@@ -290,12 +297,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return result != -1;
     }
-    public boolean updateratesData(String slno, String bcode, String mtype, Date fdate, Date tdate, String fatmin, String fatmax, String snfmin, String snfmax, String tsrate){
+    public boolean updateratesData(String slno, String bcode,String rcid, String mtype, Date fdate, Date tdate, String fatmin, String fatmax, String snfmin, String snfmax, String tsrate){
         long result=0;
         SQLiteDatabase db = this.getWritableDatabase();
         if(db.isOpen()) {
             ContentValues contentValues = new ContentValues();
             contentValues.put(rbcode, bcode);
+            contentValues.put(rrcid, rcid);
             contentValues.put(rmtype, mtype);
             contentValues.put(String.valueOf(rfdate), String.valueOf(fdate));
             contentValues.put(String.valueOf(rtdate), String.valueOf(tdate));
