@@ -130,6 +130,7 @@ public class Rates extends Fragment {
                         try {
                             //mDatabaseHelper.onCreate(db);
                             String bcode = rbcode.getText().toString();
+                            String rcid ="1";
                             String mtype = rmtype.getSelectedItem().toString();
                             String dat=txtfdate.getText().toString();
                             long date=new SimpleDateFormat("dd/MM/yyyy").parse(dat).getTime();
@@ -142,7 +143,7 @@ public class Rates extends Fragment {
                             String snfmin = txtsnfmin.getText().toString();
                             String snfmax = txtsnfmax.getText().toString();
                             String tsrate = txttsrate.getText().toString();
-                            Boolean addData = mDatabaseHelper.addratesData(bcode, mtype, fdate, tdate, fatmin, fatmax, snfmin, snfmax, tsrate);
+                            Boolean addData = mDatabaseHelper.addratesData(bcode,rcid, mtype, fdate, tdate, fatmin, fatmax, snfmin, snfmax, tsrate);
                             //System.out.println(rmtype.getSelectedItem().toString());
                             //refreshlistview();
                             //clearfields();
@@ -188,6 +189,7 @@ public class Rates extends Fragment {
                             //mDatabaseHelper.onCreate(db);
                             String slno = txtslno.getText().toString();
                             String bcode = rbcode.getText().toString();
+                            String rcid ="1";
                             String mtype = rmtype.getSelectedItem().toString();
                             Date fdate = Date.valueOf(txtfdate.getText().toString());
                             Date tdate = Date.valueOf(txttdate.getText().toString());
@@ -196,7 +198,7 @@ public class Rates extends Fragment {
                             String snfmin = txtsnfmin.getText().toString();
                             String snfmax = txtsnfmax.getText().toString();
                             String tsrate = txttsrate.getText().toString();
-                            Boolean updateRate = mDatabaseHelper.updateratesData(slno,bcode, mtype, fdate, tdate, fatmin, fatmax, snfmin, snfmax, tsrate);
+                            Boolean updateRate = mDatabaseHelper.updateratesData(slno,bcode,rcid, mtype, fdate, tdate, fatmin, fatmax, snfmin, snfmax, tsrate);
                             //System.out.println(rmtype.getSelectedItem().toString());
                             //refreshlistview();
                             //clearfields();

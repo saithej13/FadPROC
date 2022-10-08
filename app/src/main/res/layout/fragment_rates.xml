@@ -22,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txtslno"
-            android:visibility="invisible"
+            android:visibility="gone"
             android:textColor="@color/colourPrimary"
             android:gravity="left"
             android:textSize="20sp"
